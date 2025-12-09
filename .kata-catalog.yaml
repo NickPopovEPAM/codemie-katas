@@ -30,18 +30,18 @@ config:
 
 # Catalog statistics (auto-generated, do not edit manually)
 stats:
-  total_katas: 1
-  last_updated: "2025-12-09T15:30:00Z"
+  total_katas: 2
+  last_updated: "2025-12-09T18:50:13Z"
 
   # Breakdown by level
   by_level:
-    beginner: 1
+    beginner: 2
     intermediate: 0
     advanced: 0
 
   # Breakdown by status
   by_status:
     draft: 0
-    published: 1
+    published: 2
     archived: 0
 
