@@ -6,7 +6,7 @@ Think of the FAQ Assistant as your personal CodeMie expert - it knows everything
 
 ---
 
-## 🎯 Challenge 1: Find Your FAQ Assistant (2 min)
+## 🎯 Challenge 1: Find Your FAQ Assistant
 
 **Goal:** Locate and open the FAQ Assistant in the CodeMie platform
 
@@ -17,7 +17,9 @@ Think of the FAQ Assistant as your personal CodeMie expert - it knows everything
 3. **Click on the FAQ Assistant** to open the chat interface
 4. Take a moment to notice how it's always accessible, no matter where you are in the platform
 
-![FAQ Assistant Location](https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main/katas/discover-codemie-with-faq-assistant/images/faq-sidebar.png)
+**Note:** Moreover, you can find FAQ assistant in "Help" menu in Sidebar or directly in Marketplace.
+
+![FAQ Assistant Location](https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main/katas/discover-codemie-with-faq-assistant/images/faq-location.png)
 
 **✅ Success Criteria:**
 - [ ] Located the FAQ Assistant in the left sidebar
@@ -26,7 +28,7 @@ Think of the FAQ Assistant as your personal CodeMie expert - it knows everything
 
 ---
 
-## 🎯 Challenge 2: Ask About Platform Capabilities (5 min)
+## 🎯 Challenge 2: Ask About Platform Capabilities
 
 **Goal:** Use the FAQ Assistant to learn about CodeMie's integration capabilities
 
@@ -69,7 +71,7 @@ Now let's test the FAQ Assistant with real questions you might have when startin
 
 ---
 
-## 🎯 Challenge 3: Discover Marketplace Assistants (8 min)
+## 🎯 Challenge 3: Discover Marketplace Assistants
 
 **Goal:** Use FAQ Assistant to find and explore ready-to-use assistants from the Marketplace
 
@@ -135,7 +137,7 @@ The CodeMie Marketplace is packed with pre-built assistants for every role and u
 
 ---
 
-## 🎯 Challenge 4: Master FAQ Assistant Features (5 min)
+## 🎯 Challenge 4: Master FAQ Assistant Features
 
 **Goal:** Explore advanced FAQ capabilities and become a power user
 
@@ -143,9 +145,9 @@ The CodeMie Marketplace is packed with pre-built assistants for every role and u
 
 Now that you know the basics, let's discover what else the FAQ Assistant can do!
 
-1. **Ask about assistant configuration:**
+1. **Ask about datasource configuration:**
    ```
-   How do I customize an assistant's system prompt?
+   Can I add my Git code repository into Platform?
    ```
 
 2. **Learn about workflows:**
@@ -211,14 +213,3 @@ Now that you're a FAQ Assistant pro, here's how to continue your CodeMie journey
 4. **Join the community**: Ask "How do I share assistants with my team?" to learn about collaboration features
 
 **Remember:** Your FAQ Assistant is always there in the sidebar, ready to help whenever you have questions or need to discover new capabilities!
-
-### Pro Tips for Ongoing Success
-
-- **Bookmark favorite assistants** as you discover them through FAQ
-- **Ask "what's new"** regularly to stay updated on platform features
-- **Use natural language** - the FAQ understands context and intent
-- **Don't hesitate to ask** - there are no silly questions!
-
-**🎉 Ready to Build Something Amazing?**
-
-Your next kata awaits! Try exploring specific assistant types or building your first custom workflow. The FAQ Assistant will be there to guide you every step of the way.

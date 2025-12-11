@@ -31,6 +31,26 @@ Located in `scripts/`:
 Git hooks in `.githooks/`:
 - `pre-commit` - Automatically runs `update_catalog.py` before commits
 
+## IMPORTANT RESTRICTIONS
+
+**FORBIDDEN OPERATIONS:**
+- ❌ DO NOT create git commits
+- ❌ DO NOT run git add, git commit, git push, or any other git commands
+- ❌ DO NOT use git hooks or automation scripts
+- ❌ The user will handle all version control operations manually
+
+**YOUR ROLE:**
+- ✅ Create and edit kata files (kata.yaml, steps.md)
+- ✅ Read and analyze existing files
+- ✅ Provide guidance and recommendations
+- ✅ Run catalog statistics scripts (read-only operations)
+- ✅ Inform the user when files are ready for commit
+
+After creating or updating katas, inform the user that files are ready and they should:
+1. Review the changes
+2. Run git commands manually if they approve
+3. Commit and push on their own schedule
+
 ## Common Tasks
 
 ### Creating a New Kata
@@ -83,7 +103,7 @@ When users request to create a new kata, follow these principles and steps:
 
    Engaging introduction that hooks the user and explains the practical value.
 
-   ## 🎯 Challenge 1: [Action-Oriented Title] (5 min)
+   ## 🎯 Challenge 1: [Action-Oriented Title]
 
    **Goal:** Clear, specific objective for this challenge
 
@@ -100,7 +120,7 @@ When users request to create a new kata, follow these principles and steps:
 
    ---
 
-   ## 🎯 Challenge 2: [Next Challenge] (7 min)
+   ## 🎯 Challenge 2: [Next Challenge]
 
    [Continue pattern...]
 
@@ -116,6 +136,9 @@ When users request to create a new kata, follow these principles and steps:
 
    Suggestions for further learning and exploration
    ```
+
+   **IMPORTANT:** Do NOT include time estimates like "(5 min)" or "(2 min)" in challenge titles.
+   The overall kata duration is specified in kata.yaml, individual challenge timing is not needed.
 
 4. **Kata Content Guidelines**:
    - Start with quick wins (5-minute first challenge)
@@ -133,11 +156,10 @@ When users request to create a new kata, follow these principles and steps:
    # Or: python3 scripts/update_catalog.py
    ```
 
-6. **Commit Changes**:
-   ```bash
-   git add katas/kata-name/ .kata-catalog.yaml
-   git commit -m "Add kata: [Kata Title]"
-   ```
+6. **Inform User**:
+   - Let the user know that the kata files are ready
+   - List all created/modified files
+   - Remind them to review changes and commit manually when ready
 
 #### Quality Checklist Before Creating
 - [ ] Duration is 30 minutes or less
@@ -156,13 +178,13 @@ When users request to create a new kata, follow these principles and steps:
 2. Create `kata.yaml` with required fields (see format above)
 3. Create `steps.md` with challenge structure (see format above)
 4. Update catalog statistics: `./scripts/update_catalog_simple.sh` or `python3 scripts/update_catalog.py`
-5. Commit both kata files and `.kata-catalog.yaml`
+5. Inform user that files are ready for review and manual commit
 
 ### Updating Existing Kata
 1. Increment `version` in `kata.yaml` (follow semantic versioning)
 2. Make changes to `kata.yaml` or `steps.md`
 3. Update catalog statistics: `./scripts/update_catalog_simple.sh` or `python3 scripts/update_catalog.py`
-4. Commit with clear description of changes
+4. Inform user that changes are ready for review and manual commit
 
 ### Updating Catalog Statistics
 Three methods available:
@@ -196,12 +218,14 @@ The `stats` section in `.kata-catalog.yaml` should be updated whenever katas are
 
 Structure your `steps.md` files with:
 - Brief introduction explaining the kata objectives
-- `## 🎯 Challenge N: Title (X min)` headers for each main step
+- `## 🎯 Challenge N: Title` headers for each main step (NO time estimates in titles)
 - `**Goal:**` statement for each challenge
 - Clear instructions with code blocks (use language-specific syntax highlighting)
 - `**✅ Success Criteria:**` section with checkboxes
 - `**🏆 Bonus:**` section for optional advanced challenges (optional)
 - `## 🎓 Kata Complete!` final section with accomplishments and next steps
+
+**Note:** Do NOT include timing like "(5 min)" or "(2 min)" in challenge headers.
 
 ## Integration with CodeMie Platform
 
@@ -218,6 +242,46 @@ Platform import behavior controlled by `.kata-catalog.yaml` config:
 - Directories: kebab-case (e.g., `mastering-codemie-code-cli`)
 - Kata files: Always `kata.yaml` and `steps.md` (lowercase, no variations)
 - Kata IDs: Must match directory name exactly
+
+## URL and Path Conventions
+
+**IMPORTANT**: All URLs and paths to images, files, and resources must follow these rules:
+
+### For Production (GitHub Main Branch)
+Use **absolute URLs** with the GitHub raw content prefix:
+- Base URL: `https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main`
+- Example image: `https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main/katas/kata-name/images/diagram.png`
+- Example file: `https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main/katas/kata-name/resources/config.yaml`
+
+### For Local Development and Testing
+Use **relative paths** from the kata directory:
+- Example image: `./images/diagram.png` or `images/diagram.png`
+- Example file: `./resources/config.yaml` or `resources/config.yaml`
+
+### Path Strategy
+When creating or updating katas:
+1. **During local development**: Use relative paths for testing
+2. **Before committing to main**: Convert all paths to absolute URLs with the GitHub raw prefix
+3. **In `kata.yaml`**: Use absolute URLs for `image_url` and any `links` pointing to repository resources
+4. **In `steps.md`**: Use absolute URLs for images and file references that need to work in the CodeMie platform
+
+### Examples
+
+**kata.yaml (production)**:
+```yaml
+image_url: "https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main/katas/kata-name/cover.png"
+links:
+  - title: "Starter Template"
+    url: "https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main/katas/kata-name/templates/starter.py"
+    type: "tutorial"
+```
+
+**steps.md (production)**:
+```markdown
+![Architecture Diagram](https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main/katas/kata-name/images/architecture.png)
+
+Download the [configuration file](https://raw.githubusercontent.com/codemie-ai/codemie-katas/refs/heads/main/katas/kata-name/resources/config.yaml).
+```
 
 ## Version Control Guidelines
 - Increment `version` in `kata.yaml` for all kata updates:
