@@ -13,6 +13,7 @@ duration_minutes: 45
 tags:
   - "codemie"
   - "automation"
+  - "codemie-workflows"
 roles:
   - "developer"
   - "ai-engineer"
