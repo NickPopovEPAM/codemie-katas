@@ -1,0 +1,70 @@
+```markdown
+# 1. Accesibility Testing Script
+
+## Purpose:
+Demonstrating how CodeMie can be used to help with accessibility testing of web pages.
+
+## Background:
+Accessibility testing is a tricky task, as it requires thorough understanding of [WCAG](https://www.w3.org/TR/WCAG21/) accessibility standard and how it applies to UI elements of the web pages. Manual accessibility testing is labor consuming, and prone to human error. AI can help here by strictly following the standard guidelines, examining the page, finding and logging all the issues found, with all the necessary level of detail. CodeMie Accessibility Testing Assistant can showcase this capability.
+
+## Audience:
+Technical Engineering Managers (and potentially their bosses), anyone who understands the concepts of working with websites and accessibility concepts. People should be able to appreciate the time/cost savings from this approach, compared to manual accessibility testing.
+
+## Preparation Steps
+
+1. **Log in to EPAM's AI/Run:**
+   - Open your browser and navigate to [https://codemie.lab.epam.com](https://codemie.lab.epam.com).
+   - You should be able to sign in with your EPAM credentials (use SIGN IN WITH EPAM SSO option).
+   - After you log in, make sure you see the main CodeMie dashboard.
+   - Note: If you are in a region that requires EPAM VPN, please make sure your VPN is on (launch EPAM VPN client, connect to the EPAM server, and check for "Connected" status).
+
+2. **Jira Demo Instance**
+   - Open Jira Demo instance in the separate browser tab - you will need it to see the results of the Accessibility Testing Assistant work: [My Jira Items](https://jiraeu.epam.com/issues/?jql=project%20%3D%20EPM-CDME-TEST%20and%20reporter%20%3D%20currentuser()).
+   - Make sure there are no Jira items shown in search results (search query is embedded in the link above, so it should open the search results right away). If you see any tickets, run Jira Bulk Change to delete all issues picked by this filter BEFORE you run the demo:
+     - PICTURE#
+
+3. **Web Site Page for Testing**
+   - Check your access to the website. This script uses [https://www.mass.gov](https://www.mass.gov) for the demo, but you can pick any other site. Keep in mind that this demo does not assume any login or VPN requirements to access the site for testing. Please keep the page open and handy in your browser.
+
+4. **Accessibility Testing Assistant [DEMO]**
+   - Make sure the Accessibility Testing Assistant [DEMO] is available in All Assistants section in CodeMie before the demo.
+
+## Demo Steps
+
+### Short overview of main concepts
+
+Accessibility testing is a tricky task, as it requires thorough understanding of [WCAG](https://www.w3.org/TR/WCAG21/) accessibility standard and how it applies to UI elements of the web pages. Manual accessibility testing is time consuming, and prone to human error. AI can help by strictly following the standard guidelines, examining the page, finding and logging all the issues found, with all the necessary level of detail. CodeMie Accessibility Testing Assistant can showcase this capability.
+
+I'll be wearing a Tester's hat who has a responsibility to make sure that the web page is complying with WCAG accessibility standard. If there are any issues found, these issues are to be reported in Jira for further action.
+
+| Steps | Voiceover | Illustration |
+|-------|-----------|--------------|
+| Click the "Assistants" tab at the top of the screen. Click All Assistants under Explore Assistant header. | You can see the library of Agents (we call them Assistants, as they are specialized in assisting with specific parts of our work). These are all the Assistants created by me or shared by my colleagues. | PICTURE# |
+| | If you'd like to see all the assistants created by you, navigate to Assistants tab and click "Created by [ ] Me" checkbox. | PICTURE# |
+| | I wear the hat of a tester who is assigned to perform accessibility testing. I will demonstrate the accessibility testing assistant with CodeMie/AI run platform, which can browse web pages using puppeteer MCP plug-in and log issues to JIRA using JIRA tool. It will use the Accessibility Standards specification to check against the specific accessibility guidelines. | |
+| Click All Assistants to return to the previous view. Find Accessibility Testing Assistant [DEMO] in the list of available assistants. You can use search (see the screen) to narrow down the list for convenience. | Accessibility Testing Assistant will test the web site page for accessibility issues against the WCAG standard, and log any issues found as bugs in Jira. | PICTURE# |
+| Click the Assistant avatar, go to system instruction | Let's look at the assistant configuration. Part of the system instructions explains how to work with Jira to log issues. It is also using puppeteer via MCP interface to navigate and interact with the web pages in browser - for testing. | PICTURE# |
+| Go to already open Jira instance and hover over the "reported by me" issues filter. | Before starting the testing process, let me show you my Jira instance where my assistant is going to create the issue tickets. | PICTURE# |
+| Switch to CodeMie, Click Start Chat on Accessibility Testing Assistant [Demo] | Now, let me ask it to do the testing for me. | PICTURE# |
+| Enter the following prompt: "Open [https://www.mass.gov](https://www.mass.gov) in browser and find top 5 accessibility issues based on accessibility standard at [https://www.w3.org/TR/WCAG22/](https://www.w3.org/TR/WCAG22/)" Hit enter. | I am asking it to examine the specific web page for accessibility issues, and I am providing the reference to the accessibility standards web site. | |
+| Scroll through the appearing CodeMie thoughts. | You can see that the first steps are opening the provided web site page and making the screenshot of it. | PICTURE# |
+| Continue reviewing CodeMie thoughts to demonstrate the thinking process. | | PICTURE# |
+| | Here is how it nicely listed down the top 5 issues, lets review them. | PICTURE# |
+| CodeMie ask if you want to proceed with creating bugs in Jira for these issues | Approve it by writing "proceed with creating bugs in Jira" | |
+| Open Jira as per the link given above. | Now let's have a look at the Jira. Here also it created the 5 issues showing description, what it violates and the impact. | PICTURE# |
+| Go through one example out of 5 and ex | Let's look at one example like "No Skip Navigation Link", which is essential for keyboard user- Violation of level A. | |
+| | In the real world scenarios, there will be many more pages, and you may need to focus on specific areas of accessibility standard - that can be done by tweaking the Assistant prompt with refined instructions. It can really help you save time and money on testing - as it would take human much longer to do the same, with the same level of attention to detail. | |
+
+## Ideas for Scenario Modification
+
+1. Similar accessibility Testing can be done for Mobile application.
+2. Currently it evaluates against WCAG 2.2, we can add other standards as well if needed.
+
+## Possible Customizations
+
+1. We have chosen [www.mass.gov](http://www.mass.gov) but any other website can be chosen for demonstration.
+
+## FAQ and Troubleshooting
+
+<TBD>
+```
